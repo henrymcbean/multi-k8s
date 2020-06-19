@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: henrymcbean.com-tls
+spec:
+  secretName: henrymcbean.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: henrymcbean.com
+  dnsNames:
+    - henrymcbean.com
+    - www.henrymcbean.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - henrymcbean.com
+          - www.henrymcbean.com
