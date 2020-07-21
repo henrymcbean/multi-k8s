@@ -15,7 +15,7 @@ spec:
       secretName: henrymcbean.com
   rules:
     - host: henrymcbean.com
-    - http:
+      http:
         paths:
           - path: /?(.*)
             backend:
@@ -26,7 +26,7 @@ spec:
               serviceName: server-cluster-ip-service
               servicePort: 5000
     - host: www.henrymcbean.com
-    - http:
+      http:
         paths:
           - path: /?(.*)
             backend:
